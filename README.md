@@ -27,7 +27,8 @@ This project follows a Kotlin Multiplatform structure.
 ### Prerequisites
 
 *   JDK 17+
-*   A running PostgreSQL instance (or Docker to run the included testing environment)
+*   A locally running PostgreSQL instance
+*   Native Docker installation (on Linux, or Docker Desktop for Windows) 
 
 ### Running the App
 
@@ -35,12 +36,6 @@ To run the application from the command line:
 
 ```bash
 ./gradlew :desktopApp:run
-```
-
-To create a native distribution (e.g., `.dmg`, `.msi`, `.deb`):
-
-```bash
-./gradlew :desktopApp:package
 ```
 
 ## Running the Mock Docker Database
@@ -51,10 +46,11 @@ This project comes with a fully configured `docker-compose.yml` to spin up a moc
 
 To start the database and the load generator in the background:
 
+*Note: A hyphen might be necessary (docker-compose) depending on the installation environment.*
+
 ```bash
 docker compose up -d
 ```
-*Note: The database initialization will take a few seconds to populate the 600,000+ mock rows.*
 
 In the application, select **DOCKER** and use:
 * **User**: `monitor_user`
