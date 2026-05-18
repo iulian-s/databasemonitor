@@ -100,7 +100,7 @@ fun ConnectionForm(
         }
         else if (profileType == ProfileType.DOCKER) {
             host = "localhost"
-            port = "5432"
+            port = "5433"
             user = "monitor_user"
             pass = "monitor_password"
             dbName = "monitor_db"
