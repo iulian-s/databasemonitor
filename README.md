@@ -14,7 +14,7 @@ A Compose Multiplatform desktop application to monitor PostgreSQL databases acro
 *   **Slow Query Monitoring:** Track queries executing longer than a customizable threshold.
 *   **Historical Trends:** View simple line charts for active connections and database growth.
 *   **AI Insights Helper:** Layer that analyzes the past 10 snapshots and generates an actionable health report using an external API, falling back to local generated metrics if unavailable.
-*   **Data Persistence:** Saves metric snapshots locally as JSON and allows storing connection information.
+*   **Data Persistence:** Saves metric snapshots locally as JSON and allows storing connection information. On Windows, it's stored in: "C:\Users\{username}\AppData\Roaming\DatabaseMonitor\metrics_history.json"
 
 ## Architecture
 
