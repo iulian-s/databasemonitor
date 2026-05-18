@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: monitor_user
+      POSTGRES_PASSWORD: monitor_password
+      POSTGRES_DB: monitor_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_setup/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  load_generator:
+    image: postgres:15-alpine
+    depends_on:
+      - postgres
+    volumes:
+      - ./db_setup/load.sh:/load.sh
+    entrypoint: ["sh", "/load.sh"]
